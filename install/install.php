@@ -28,14 +28,14 @@
       /* Clean database */
       $migration->displayMessage("Clean data from old installation of the plugin");
 
-      $query = "SELECT * FROM information_schema.columns WHERE  table_schema = 'MY_DATABASE' AND column_name IN ( 'corefactor' )";
+      $query = "SELECT * FROM information_schema.columns WHERE table_schema = 'MY_DATABASE' AND column_name IN ( 'corefactor' )";
       $res = $DB->queryOrDie($query, $DB->error());
       if ($res->num_rows > 0){
          $query = "ALTER TABLE glpi_deviceprocessors DROP corefactor";
          $DB->queryOrDie($query, $DB->error());
       }
 
-      $query = "SELECT * FROM information_schema.columns WHERE  table_schema = 'MY_DATABASE' AND column_name IN ( 'pvu' )";
+      $query = "SELECT * FROM information_schema.columns WHERE table_schema = 'MY_DATABASE' AND column_name IN ( 'pvu' )";
       $res = $DB->queryOrDie($query, $DB->error());
       if ($res->num_rows > 0){
          $query = "ALTER TABLE glpi_deviceprocessors DROP pvu";
@@ -44,6 +44,9 @@
 
       /* Create tables */
       $migration->displayMessage("Creation tables in database");
+
+      $query = "CREATE TABLE glpi_plugin_sam_oracle_corefactors (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `desc` TEXT NOT NULL, `corefactor` FLOAT(11) NOT NULL)";
+      $res = $DB->queryOrDie($query, $DB->error());
 
       sleep(1);
 
