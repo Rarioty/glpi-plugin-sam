@@ -5,9 +5,9 @@
       public static function getAdditionalFields(){
          return [
             [
-               'name'  => 'corefactor',
+               'name'  => 'plugin_sam_corefactors_id',
                'label' => __('Core factor'),
-               'type'  => 'text'
+               'type'  => 'dropdownValue'
             ],
             [
                'name'  => 'pvu',

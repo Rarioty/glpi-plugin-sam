@@ -6,6 +6,7 @@
     * @param string $version
     */
    function pluginSAMInstall($version) {
+      global $CFG_GLPI;
       global $DB;
 
       ini_set("memory_limit", "-1");
@@ -28,13 +29,6 @@
 
       $migration->displayMessage(__("Dropping corefactor and pvu columns"));
 
-      $query = "SELECT * FROM information_schema.columns WHERE table_schema = 'glpi' AND TABLE_NAME = 'glpi_deviceprocessors' AND column_name IN ( 'corefactor' )";
-      $res = $DB->queryOrDie($query, $DB->error());
-      if ($res->num_rows > 0){
-         $query = "ALTER TABLE glpi_deviceprocessors DROP corefactor";
-         $DB->queryOrDie($query, $DB->error());
-      }
-
       $query = "SELECT * FROM information_schema.columns WHERE table_schema = 'glpi' AND TABLE_NAME = 'glpi_deviceprocessors' AND column_name IN ( 'pvu' )";
       $res = $DB->queryOrDie($query, $DB->error());
       if ($res->num_rows > 0){
@@ -42,13 +36,20 @@
          $DB->queryOrDie($query, $DB->error());
       }
 
+      $query = "SELECT * FROM information_schema.columns WHERE table_schema = 'glpi' AND TABLE_NAME = 'glpi_deviceprocessors' AND column_name IN ( 'plugin_sam_corefactors_id' )";
+      $res = $DB->queryOrDie($query, $DB->error());
+      if ($res->num_rows > 0){
+         $query = "ALTER TABLE glpi_deviceprocessors DROP plugin_sam_corefactors_id";
+         $DB->queryOrDie($query, $DB->error());
+      }
+
       /* Create tables */
       $migration->displayMessage(__("Creation tables in database"));
 
-      $migration->displayMessage(__("Creating glpi_plugin_sam_oracle_corefactors table"));
+      $migration->displayMessage(__("Creating glpi_plugin_sam_corefactors table"));
 
-      if (!TableExists("glpi_plugin_sam_oracle_corefactors")){
-         $query = "CREATE TABLE glpi_plugin_sam_oracle_corefactors (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `description` TEXT NOT NULL, `corefactor` FLOAT(11) NOT NULL)";
+      if (!TableExists("glpi_plugin_sam_corefactors")){
+         $query = "CREATE TABLE glpi_plugin_sam_corefactors (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` TEXT NOT NULL, `corefactor` FLOAT(11) NOT NULL)";
          $res = $DB->queryOrDie($query, $DB->error());
       }
 
@@ -66,9 +67,11 @@
       $migration->displayMessage(__("Modifying glpi_deviceprocessors"));
 
       if (TableExists('glpi_deviceprocessors')){
-         $query = 'ALTER TABLE glpi_deviceprocessors ADD (corefactor float(11), pvu integer(11))';
+         $query = 'ALTER TABLE glpi_deviceprocessors ADD (pvu INT(11), plugin_sam_corefactors_id INT(11))';
          $res = $DB->queryOrDie($query, $DB->error());
       }
+
+      Plugin::registerClass('PluginSamCorefactor');
 
       return true;
    }
