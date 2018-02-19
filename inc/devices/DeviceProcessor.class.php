@@ -10,12 +10,9 @@
                'type'  => 'dropdownValue'
             ],
             [
-               'name'  => 'pvu',
+               'name'  => 'plugin_sam_pvu_id',
                'label' => __('Processor Value Unit'),
-               'type'  => 'integer',
-               'options' => [
-                  'max' => '200'
-               ]
+               'type'  => 'dropdownValue'
             ]
          ];
       }

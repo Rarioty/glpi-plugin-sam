@@ -25,11 +25,14 @@
          $res = $DB->queryOrDie($query, $DB->error());
       }
 
-      if (TableExists('glpi_plugin_sam_oracle_corefactors')){
-         $query = 'DROP TABLE glpi_plugin_sam_oracle_corefactors';
+      if (TableExists('glpi_plugin_sam_corefactors')){
+         $query = 'DROP TABLE glpi_plugin_sam_corefactors';
          $req = $DB->queryOrDie($query, $DB->error());
       }
-
+      if (TableExists('glpi_plugin_sam_pvu')){
+         $query = 'DROP TABLE glpi_plugin_sam_pvu';
+         $req = $DB->queryOrDie($query, $DB->error());
+      }
       return true;
    }
 ?>

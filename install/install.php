@@ -29,10 +29,10 @@
 
       $migration->displayMessage(__("Dropping corefactor and pvu columns"));
 
-      $query = "SELECT * FROM information_schema.columns WHERE table_schema = 'glpi' AND TABLE_NAME = 'glpi_deviceprocessors' AND column_name IN ( 'pvu' )";
+      $query = "SELECT * FROM information_schema.columns WHERE table_schema = 'glpi' AND TABLE_NAME = 'glpi_deviceprocessors' AND column_name IN ( 'plugin_sam_pvu_id' )";
       $res = $DB->queryOrDie($query, $DB->error());
       if ($res->num_rows > 0){
-         $query = "ALTER TABLE glpi_deviceprocessors DROP pvu";
+         $query = "ALTER TABLE glpi_deviceprocessors DROP plugin_sam_pvu_id";
          $DB->queryOrDie($query, $DB->error());
       }
 
@@ -53,15 +53,18 @@
          $res = $DB->queryOrDie($query, $DB->error());
       }
 
+      $migration->displayMessage(__("Creating glpi_plugin_sam_pvu table"));
+     
+      if (!TableExists("glpi_plugin_sam_pvu")){
+         $query = "CREATE TABLE glpi_plugin_sam_pvu (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` TEXT NOT NULL, `pvu` INT(11) NOT NULL)";
+         $res = $DB->queryOrDie($query, $DB->error());
+      }      
+
+
       $migration->displayMessage(__("Creating glpi_plugin_sam_metrics table"));
 
       if (!TableExists("glpi_plugin_sam_metrics")){
          $query = "CREATE TABLE glpi_plugin_sam_metrics (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(255) NOT NULL, `classname` VARCHAR(255) NOT NULL)";
-         $res = $DB->queryOrDie($query, $DB->error());
-      }
-
-      if (!TableExists("glpi_plugin_sam_ibm_pvu")){
-         $query = "CREATE TABLE glpi_plugin_sam_ibm_pvu (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `desc` TEXT NOT NULL, `pvu` INT(11) NOT NULL)";
          $res = $DB->queryOrDie($query, $DB->error());
       }
 
@@ -73,12 +76,13 @@
 
       $migration->displayMessage(__("Modifying glpi_deviceprocessors"));
 
+      /*
       if (TableExists('glpi_deviceprocessors')){
-         $query = 'ALTER TABLE glpi_deviceprocessors ADD (pvu INT(11), plugin_sam_corefactors_id INT(11))';
+         $query = 'ALTER TABLE glpi_deviceprocessors ADD (plugin_sam_pvu_id INT(11), plugin_sam_corefactors_id INT(11))';
          $res = $DB->queryOrDie($query, $DB->error());
       }
-
-      Plugin::registerClass('PluginSamCorefactor');
+      */
+      //Plugin::registerClass('PluginSamCorefactor');
 
       return true;
    }
