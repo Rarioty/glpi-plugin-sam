@@ -52,6 +52,13 @@
 
       sleep(1);
 
+      if (!TableExists("glpi_plugin_sam_ibm_pvu")){
+         $query = "CREATE TABLE glpi_plugin_sam_ibm_pvu (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `desc` TEXT NOT NULL, `pvu` INT(11) NOT NULL)";
+         $res = $DB->queryOrDie($query, $DB->error());
+      }
+
+      sleep(1);
+
       /* Modifying tables */
       $migration->displayMessage("Modifying existing tables in database");
 
