@@ -1,7 +1,7 @@
 <?php
    define('PLUGIN_SAM_VERSION', '1.0.0');
 
-   require_once (GLPI_ROOT . "/plugins/sam/inc/SAMHooks.class.php");
+   require_once (GLPI_ROOT . "/plugins/sam/inc/SoftwareAssetManagementHooks.class.php");
 
    /**
     * Init the hooks of the plugins - Needed
@@ -12,12 +12,10 @@
       global $PLUGIN_HOOKS;
 
       $PLUGIN_HOOKS['csrf_compliant']['sam'] = true;
-      $PLUGIN_HOOKS['pre_item_form']['sam'] = ['SAMHooks', 'pre_item_form'];
+      $PLUGIN_HOOKS['pre_item_form']['sam'] = ['SoftwareAssetManagementHooks', 'pre_item_form'];
 
-      $PLUGIN_HOOKS['reports']['sam'] = array(
-        'report/EntityVue.php' => 'Entity vue',
-        'report/ProductVue.php' => 'Product vue',
-      );
+      $PLUGIN_HOOKS['reports']['sam'] = SoftwareAssetManagementHooks::get_reports();
+      $PLUGIN_HOOKS['menu_toadd']['sam'] = SoftwareAssetManagementHooks::get_new_menus();
    }
 
    /**
