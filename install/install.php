@@ -45,8 +45,10 @@
       /* Create tables */
       $migration->displayMessage("Creation tables in database");
 
-      $query = "CREATE TABLE glpi_plugin_sam_oracle_corefactors (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `desc` TEXT NOT NULL, `corefactor` FLOAT(11) NOT NULL)";
-      $res = $DB->queryOrDie($query, $DB->error());
+      if (!TableExists("glpi_plugin_sam_oracle_corefactors")){
+         $query = "CREATE TABLE glpi_plugin_sam_oracle_corefactors (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `desc` TEXT NOT NULL, `corefactor` FLOAT(11) NOT NULL)";
+         $res = $DB->queryOrDie($query, $DB->error());
+      }
 
       sleep(1);
 
