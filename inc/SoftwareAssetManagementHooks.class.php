@@ -28,7 +28,7 @@
 
       public static function get_new_menus(){
          return array(
-            'assets' => 'PluginSamMetric'
+            'management' => 'PluginSamMetric'
          );
       }
    }

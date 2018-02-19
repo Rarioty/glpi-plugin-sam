@@ -20,9 +20,14 @@
    function plugin_sam_uninstall() {
       global $DB;
 
-      if (TableExists('glpi_deviceprocessors')){
-         $query = 'ALTER TABLE glpi_deviceprocessors DROP corefactor, DROP pvu';
+      if (TableExists('glpi_plugin_sam_metrics')){
+         $query = 'DROP TABLE glpi_plugin_sam_metrics';
          $res = $DB->queryOrDie($query, $DB->error());
+      }
+
+      if (TableExists('glpi_plugin_sam_oracle_corefactors')){
+         $query = 'DROP TABLE glpi_plugin_sam_oracle_corefactors';
+         $req = $DB->queryOrDie($query, $DB->error());
       }
 
       return true;
