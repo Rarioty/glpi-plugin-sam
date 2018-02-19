@@ -15,7 +15,8 @@
       $PLUGIN_HOOKS['pre_item_form']['sam'] = ['SAMHooks', 'pre_item_form'];
 
       $PLUGIN_HOOKS['reports']['sam'] = array(
-        'report/report.php' => 'New report test'
+        'report/EntityVue.php' => 'Entity vue',
+        'report/ProductVue.php' => 'Product vue',
       );
    }
 
