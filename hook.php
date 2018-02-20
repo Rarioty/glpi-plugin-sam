@@ -29,8 +29,9 @@
          $query = 'DROP TABLE glpi_plugin_sam_corefactors';
          $req = $DB->queryOrDie($query, $DB->error());
       }
-      if (TableExists('glpi_plugin_sam_pvu')){
-         $query = 'DROP TABLE glpi_plugin_sam_pvu';
+      
+      if (TableExists('glpi_plugin_sam_pvus')){
+         $query = 'DROP TABLE glpi_plugin_sam_pvus';
          $req = $DB->queryOrDie($query, $DB->error());
       }
       return true;
