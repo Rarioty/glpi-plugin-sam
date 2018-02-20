@@ -10,7 +10,7 @@
                'type'  => 'dropdownValue'
             ],
             [
-               'name'  => 'plugin_sam_pvu_id',
+               'name'  => 'plugin_sam_pvus_id',
                'label' => __('Processor Value Unit'),
                'type'  => 'dropdownValue'
             ]

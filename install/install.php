@@ -53,10 +53,10 @@
          $res = $DB->queryOrDie($query, $DB->error());
       }
 
-      $migration->displayMessage(__("Creating glpi_plugin_sam_pvu table"));
+      $migration->displayMessage(__("Creating glpi_plugin_sam_pvus table"));
      
-      if (!TableExists("glpi_plugin_sam_pvu")){
-         $query = "CREATE TABLE glpi_plugin_sam_pvu (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` TEXT NOT NULL, `pvu` INT(11) NOT NULL)";
+      if (!TableExists("glpi_plugin_sam_pvus")){
+         $query = "CREATE TABLE glpi_plugin_sam_pvus (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` TEXT NOT NULL, `pvu` INT(11) NOT NULL)";
          $res = $DB->queryOrDie($query, $DB->error());
       }      
 
@@ -83,7 +83,7 @@
       }
       */
       //Plugin::registerClass('PluginSamCorefactor');
-
+      
       return true;
    }
 ?>
