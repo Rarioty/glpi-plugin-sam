@@ -5,33 +5,15 @@
       }
 
       static function canCreate() {
-         return true;
+         return false;
       }
 
       static function canView() {
-         return true;
+         return false;
       }
 
       static function getMenuName() {
          return __('Metrics', 'sam');
-      }
-
-      function showForm($ID, $options = array()) {
-         global $CFG_GLPI;
-
-         $this->initForm($ID, $options);
-         $this->showFormHeader($options);
-
-         echo "<tr class='tab_bg_1'>";
-
-         echo "<td>" . __('ID', 'sam') . "</td>";
-         echo "<td>";
-         echo $ID;
-         echo "</td>";
-
-         $this->showFormButtons($options);
-
-         return true;
       }
    }
 ?>

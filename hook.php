@@ -39,6 +39,12 @@
          $query = 'ALTER TABLE glpi_deviceprocessors DROP plugin_sam_corefactors_id, DROP plugin_sam_pvus_id';
          $req = $DB->queryOrDie($query, $DB->error());
       }
+
+      if (TableExists('glpi_softwarelicenses')){
+         $query = 'ALTER TABLE glpi_softwarelicenses DROP plugin_sam_metrics_id';
+         $req = $DB->queryOrDie($query, $DB->error());
+      }
+      
       return true;
    }
 ?>
