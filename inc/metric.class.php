@@ -1,7 +1,7 @@
 <?php
    class PluginSamMetric extends CommonDBTM {
       static function getTypeName($nb = 0) {
-         return __('Metrics');
+         return __('Metrics', 'sam');
       }
 
       static function canCreate() {
@@ -13,7 +13,7 @@
       }
 
       static function getMenuName() {
-         return __('Metrics');
+         return __('Metrics', 'sam');
       }
 
       function showForm($ID, $options = array()) {
@@ -24,7 +24,7 @@
 
          echo "<tr class='tab_bg_1'>";
 
-         echo "<td>" . __('ID') . "</td>";
+         echo "<td>" . __('ID', 'sam') . "</td>";
          echo "<td>";
          echo $ID;
          echo "</td>";

@@ -14,10 +14,10 @@
 
       $migration = new Migration($version);
 
-      $migration->displayMessage(__("Installation of plugin SAM"));
+      $migration->displayMessage(__('Installation of plugin SAM', 'sam'));
 
       /* Check existence of tables */
-      $migration->displayMessage(__("Getting existence of glpi_deviceprocessors"));
+      $migration->displayMessage(__('Getting existence of glpi_deviceprocessors'));
 
       $tableDeviceProcessorsExist = TableExists('glpi_deviceprocessors');
       if (!$tableDeviceProcessorsExist){
@@ -25,9 +25,9 @@
       }
 
       /* Clean database */
-      $migration->displayMessage(__("Clean data from old installation of the plugin"));
+      $migration->displayMessage(__('Clean data from old installation of the plugin', 'sam'));
 
-      $migration->displayMessage(__("Dropping corefactor and pvu columns"));
+      $migration->displayMessage(__('Dropping corefactor and pvu columns', 'sam'));
 
       $query = "SELECT * FROM information_schema.columns WHERE table_schema = 'glpi' AND TABLE_NAME = 'glpi_deviceprocessors' AND column_name IN ( 'plugin_sam_pvu_id' )";
       $res = $DB->queryOrDie($query, $DB->error());
@@ -44,16 +44,16 @@
       }
 
       /* Create tables */
-      $migration->displayMessage(__("Creation tables in database"));
+      $migration->displayMessage(__('Creation tables in database', 'sam'));
 
-      $migration->displayMessage(__("Creating glpi_plugin_sam_corefactors table"));
+      $migration->displayMessage(__('Creating glpi_plugin_sam_corefactors table'));
 
       if (!TableExists("glpi_plugin_sam_corefactors")){
          $query = "CREATE TABLE glpi_plugin_sam_corefactors (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` TEXT NOT NULL, `corefactor` FLOAT(11) NOT NULL)";
          $res = $DB->queryOrDie($query, $DB->error());
       }
 
-      $migration->displayMessage(__("Creating glpi_plugin_sam_pvus table"));
+      $migration->displayMessage(__('Creating glpi_plugin_sam_pvus table'));
      
       if (!TableExists("glpi_plugin_sam_pvus")){
          $query = "CREATE TABLE glpi_plugin_sam_pvus (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` TEXT NOT NULL, `pvu` INT(11) NOT NULL)";
@@ -61,7 +61,7 @@
       }      
 
 
-      $migration->displayMessage(__("Creating glpi_plugin_sam_metrics table"));
+      $migration->displayMessage(__('Creating glpi_plugin_sam_metrics table'));
 
       if (!TableExists("glpi_plugin_sam_metrics")){
          $query = "CREATE TABLE glpi_plugin_sam_metrics (`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY, `name` VARCHAR(255) NOT NULL, `classname` VARCHAR(255) NOT NULL)";
@@ -71,9 +71,9 @@
       sleep(1);
 
       /* Modifying tables */
-      $migration->displayMessage(__("Modifying existing tables in database"));
+      $migration->displayMessage(__('Modifying existing tables in database', 'sam'));
 
-      $migration->displayMessage(__("Modifying glpi_deviceprocessors"));
+      $migration->displayMessage(__('Modifying glpi_deviceprocessors'));
 
       if ($tableDeviceProcessorsExist){
          $query= "ALTER TABLE glpi_deviceprocessors ADD plugin_sam_corefactors_id INT(11) NOT NULL, ADD plugin_sam_pvus_id INT(11) NOT NULL";

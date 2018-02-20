@@ -5,7 +5,7 @@
     * @return boolean
     */
    function plugin_sam_install() {
-      // Html::header(__('Setup'), filter_input(INPUT_SERVER, "PHP_SELF"), "config", "plugins");
+      // Html::header(__('Setup', 'sam'), filter_input(INPUT_SERVER, "PHP_SELF"), "config", "plugins");
       
       require_once (GLPI_ROOT . "/plugins/sam/install/install.php");
 

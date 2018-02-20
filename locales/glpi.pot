@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-20 14:17+0100\n"
+"POT-Creation-Date: 2018-02-20 15:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,10 +16,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: hook.php:8
-msgid "Setup"
-msgstr ""
 
 #: front/metric.form.php:4 front/metric.php:4
 msgid "Metric"
@@ -62,7 +58,7 @@ msgid "Creating glpi_plugin_sam_corefactors table"
 msgstr ""
 
 #: install/install.php:56
-msgid "Creating glpi_plugin_sam_pvu table"
+msgid "Creating glpi_plugin_sam_pvus table"
 msgstr ""
 
 #: install/install.php:64
@@ -73,7 +69,7 @@ msgstr ""
 msgid "Modifying existing tables in database"
 msgstr ""
 
-#: install/install.php:77
+#: install/install.php:76
 msgid "Modifying glpi_deviceprocessors"
 msgstr ""
 
