@@ -1,0 +1,106 @@
+Sun and Fujitsu UltraSPARC T1 processor (1.0 or 1.2 GHz);0.25
+Sun Fire T1000 Server;0.25
+SPARC Enterprise T1000 Server*;0.25
+with 6 or 8-core 1.0 GHz UltraSPARC T1 processor;0.25
+Sun Fire T2000 Server;0.25
+SPARC Enterprise T2000 Server*;0.25
+with 4, 6, or 8-core 1.0 GHz, or 8 core 1.2 GHz UltraSPARC T1 processor;0.25
+Sun Netra T2000;0.25
+1.0 or 1.2 GHz UltraSPARC T1 processor;0.25
+SPARC T3 processor;0.25
+Sun and Fujitsu UltraSPARC T1 1.4 GHz;0.5
+Sun Fire T2000 Server and SPARC Enterprise T2000 Server*;0.5
+with 8-core, 1.4 GHz UltraSPARC T1 processor;0.5
+Sun T6300;0.5
+1.4 GHz UltraSPARC T1 processor;0.5
+AMD EPYC™ 7XX1;0.5
+AMD Opteron™ Models 13XX;0.5
+AMD Opteron™ Models 23XX;0.5
+AMD Opteron™ Models 24XX;0.5
+AMD Opteron™ Models 32XX;0.5
+AMD Opteron™ Models 41XX;0.5
+AMD Opteron™ Models 42XX;0.5
+AMD Opteron™ Models 43XX;0.5
+AMD Opteron™ Models 61XX;0.5
+AMD Opteron™ Models 62XX;0.5
+AMD Opteron™ Models 63XX;0.5
+AMD Opteron™ Models 83XX;0.5
+AMD Opteron™ Models 84XX;0.5
+AMD Opteron™ earlier than Models 84XX;0.5
+Intel® Xeon® Platinum 81XX;0.5
+Intel® Xeon® Gold 61XX;0.5
+Intel® Xeon® Gold 51XX;0.5
+Intel® Xeon® Silver 41XX;0.5
+Intel® Xeon® Bronze 31XX;0.5
+Intel Xeon Series 56XX;0.5
+Series 65XX;0.5
+Series 75XX;0.5
+Series E7-28XX;0.5
+E7-28XX v2;0.5
+Series E7-48XX;0.5
+E7-48XX v2;0.5
+E7-48XX v3;0.5
+E7-48XX v4;0.5
+Series E7-88XX;0.5
+E7-88XX v2;0.5
+E7-88XX v3;0.5
+E7-88XX v4;0.5
+Series E5-24XX;0.5
+E5-24XX v2;0.5
+E5-24XX v3;0.5
+Series E5-26XX;0.5
+E5-26XX v2;0.5
+E5-26XX v3;0.5
+E5–26XX v4;0.5
+Series E5-46XX;0.5
+E5-46XX v2;0.5
+E5-46XX v3;0.5
+E5-46XX v4;0.5
+E3-15XX v5;0.5
+Series E3-12XX;0.5
+E3-12XX v2;0.5
+E3-12XX v3;0.5
+E3-12XX v4;0.5
+E3–12XX v5;0.5
+E5-14XX v2;0.5
+E5-14XX v3;0.5
+E5-16XX;0.5
+E5-16XX v2;0.5
+E5-16XX v3;0.5
+E5-16XX v4;0.5
+Intel Xeon with earlier multicore chips;0.5
+Intel Itanium Series 93XX;0.5
+Intel Itanium Series with earlier multicore chips;0.5
+Intel or AMD Desktop Multicore chips;0.5
+Laptop/Notebook Multicore chips;0.5
+Netbook Multicore chips;0.5
+Sun UltraSPARC T2+;0.5
+SPARC64 VII+;0.5
+SPARC64 X;0.5
+SPARC64 X+;0.5
+SPARC64 XII;0.5
+SPARC T4;0.5
+SPARC T5;0.5
+SPARC M5,;0.5
+SPARC M6;0.5
+SPARC M7;0.5
+SPARC M8;0.5
+SPARC S7;0.5
+Sun and Fujitsu SPARC64 VI;0.75
+Sun and Fujitsu SPARC64 VII;0.75
+Sun UltraSPARC IV;0.75
+Sun UltraSPARC IV+;0.75
+Sun UltraSPARC with earlier multicore chips;0.75
+Sun UltraSPARC T2;0.75
+HP PA-RISC;0.75
+IBM POWER5+;0.75
+IBM POWER with earlier multicore chips;0.75
+All Single Core Chips;1.0
+Intel Itanium Series 93XX (For servers purchased on or after Dec 1st, 2010);1.0
+Intel Itanium Series 95XX;1.0
+IBM POWER6;1.0
+IBM POWER7;1.0
+IBM POWER7+;1.0
+IBM POWER8;1.0
+IBM System z (z10 and earlier);1.0
+All Other Multicore chips;1.0

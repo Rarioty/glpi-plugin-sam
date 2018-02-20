@@ -81,6 +81,23 @@
       $query = "INSERT INTO glpi_plugin_sam_metrics(name, classname) VALUES('Oracle processor', 'PluginSamMetricOracleProcessor')";
       $res = $DB->queryOrDie($query, $DB->error());
 
+      $migration->displayMessage(__('Populating glpi_plugin_sam_corefactors table', 'sam'));
+
+      /* Importing CSV files */
+      /* Importing corefactors */
+      $path="/../files/oracle_corefactors.csv";
+      echo $path;
+      $file=fopen(__DIR__ . $path, "r");
+     
+      while (!feof($file)){
+         $line=addslashes(fgets($file));
+         $tab=explode(';',$line);
+         $sql="INSERT INTO glpi_plugin_sam_corefactors VALUES('','".$tab[0]."', '".$tab[1]."')";
+         $res = $DB->queryOrDie($sql, $DB->error());
+      }
+
+      fclose($file);
+
       /* Modifying tables */
       $migration->displayMessage(__('Modifying existing tables in database', 'sam'));
 
