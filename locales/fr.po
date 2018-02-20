@@ -3,80 +3,81 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-20 14:17+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2018-02-20 14:30+0100\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
 
 #: hook.php:8
 msgid "Setup"
-msgstr ""
+msgstr "Configuration"
 
 #: front/metric.form.php:4 front/metric.php:4
 msgid "Metric"
-msgstr ""
+msgstr "Métrique"
 
 #: front/metric.form.php:4
 msgid "metric"
-msgstr ""
+msgstr "métrique"
 
 #: inc/metric.class.php:4 inc/metric.class.php:16
 msgid "Metrics"
-msgstr ""
+msgstr "Métriques"
 
 #: inc/metric.class.php:27
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: install/install.php:17
 msgid "Installation of plugin SAM"
-msgstr ""
+msgstr "Installation du plugin SAM"
 
 #: install/install.php:20
 msgid "Getting existence of glpi_deviceprocessors"
-msgstr ""
+msgstr "Vérification de l’existence de la table glpi_deviceprocessors"
 
 #: install/install.php:28
 msgid "Clean data from old installation of the plugin"
-msgstr ""
+msgstr "Nettoyage des données de l’ancienne installation du plugin"
 
 #: install/install.php:30
 msgid "Dropping corefactor and pvu columns"
-msgstr ""
+msgstr "Suppression des colonnes core factor et peu"
 
 #: install/install.php:47
 msgid "Creation tables in database"
-msgstr ""
+msgstr "Création des tables dans la base de données"
 
 #: install/install.php:49
 msgid "Creating glpi_plugin_sam_corefactors table"
-msgstr ""
+msgstr "Création de la table glpi_plugin_sam_corefactors"
 
 #: install/install.php:56
 msgid "Creating glpi_plugin_sam_pvu table"
-msgstr ""
+msgstr "Création de la table glpi_plugin_sam_pvu"
 
 #: install/install.php:64
 msgid "Creating glpi_plugin_sam_metrics table"
-msgstr ""
+msgstr "Création de la table glpi_plugin_sam_metrics_table"
 
 #: install/install.php:74
 msgid "Modifying existing tables in database"
-msgstr ""
+msgstr "Modification de l’existence des tables dans la base de données"
 
 #: install/install.php:77
 msgid "Modifying glpi_deviceprocessors"
-msgstr ""
+msgstr "Modification de la table glpi_deviceprocessors"
 
 #: report/EntityVue.php:4 report/ProductVue.php:4
 msgid "Software Asset Management"
-msgstr ""
+msgstr "Gestion du patrimoine des licenses"
