@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-20 15:31+0100\n"
-"PO-Revision-Date: 2018-02-20 15:32+0100\n"
+"POT-Creation-Date: 2018-02-20 16:42+0100\n"
+"PO-Revision-Date: 2018-02-20 16:43+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -22,14 +22,12 @@ msgstr ""
 msgid "Metrics"
 msgstr "Métriques"
 
-#: inc/metric.class.php:27
-msgid "ID"
-msgstr "ID"
-
+#: inc/devices/SoftwareLicense.class.php:9
 #: inc/devices/DeviceProcessor.class.php:9
 msgid "Core factor"
 msgstr "Coefficient par coeur (Oracle)"
 
+#: inc/devices/SoftwareLicense.class.php:14
 #: inc/devices/DeviceProcessor.class.php:14
 msgid "Processor Value Unit"
 msgstr "Valeur unitaire par coeur (IBM)"
@@ -42,36 +40,48 @@ msgstr "Installation du plugin SAM"
 msgid "Getting existence of glpi_deviceprocessors"
 msgstr "Vérification de l’existence de la table glpi_deviceprocessors"
 
-#: install/install.php:28
+#: install/install.php:32
 msgid "Clean data from old installation of the plugin"
 msgstr "Nettoyage des données de l’ancienne installation du plugin"
 
-#: install/install.php:30
+#: install/install.php:34
 msgid "Dropping corefactor and pvu columns"
 msgstr "Suppression des colonnes core factor et peu"
 
-#: install/install.php:47
+#: install/install.php:51
 msgid "Creation tables in database"
 msgstr "Création des tables dans la base de données"
 
-#: install/install.php:49
+#: install/install.php:53
 msgid "Creating glpi_plugin_sam_corefactors table"
 msgstr "Création de la table glpi_plugin_sam_corefactors"
 
-#: install/install.php:56
+#: install/install.php:60
 msgid "Creating glpi_plugin_sam_pvus table"
 msgstr "Création de la table glpi_plugin_sam_pvu"
 
-#: install/install.php:64
+#: install/install.php:67
 msgid "Creating glpi_plugin_sam_metrics table"
 msgstr "Création de la table glpi_plugin_sam_metrics_table"
 
-#: install/install.php:74
+#: install/install.php:79
+msgid "Populating tables"
+msgstr "Ajout de données dans les tables de la base de données"
+
+#: install/install.php:84
+msgid "Populating glpi_plugin_sam_corefactors table"
+msgstr "Création de la table glpi_plugin_sam_corefactors"
+
+#: install/install.php:102
 msgid "Modifying existing tables in database"
 msgstr "Modification de l’existence des tables dans la base de données"
 
-#: install/install.php:76
+#: install/install.php:104
 msgid "Modifying glpi_deviceprocessors"
+msgstr "Modification de la table glpi_deviceprocessors"
+
+#: install/install.php:111
+msgid "Modifying glpi_softwarelicenses"
 msgstr "Modification de la table glpi_deviceprocessors"
 
 #: report/EntityVue.php:4 report/ProductVue.php:4
@@ -85,6 +95,9 @@ msgstr "Métrique"
 #: front/metric.form.php:4
 msgid "metric"
 msgstr "métrique"
+
+#~ msgid "ID"
+#~ msgstr "ID"
 
 #~ msgid "Setup"
 #~ msgstr "Configuration"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-20 15:31+0100\n"
+"POT-Creation-Date: 2018-02-20 16:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,14 +21,12 @@ msgstr ""
 msgid "Metrics"
 msgstr ""
 
-#: inc/metric.class.php:27
-msgid "ID"
-msgstr ""
-
+#: inc/devices/SoftwareLicense.class.php:9
 #: inc/devices/DeviceProcessor.class.php:9
 msgid "Core factor"
 msgstr ""
 
+#: inc/devices/SoftwareLicense.class.php:14
 #: inc/devices/DeviceProcessor.class.php:14
 msgid "Processor Value Unit"
 msgstr ""
@@ -41,36 +39,48 @@ msgstr ""
 msgid "Getting existence of glpi_deviceprocessors"
 msgstr ""
 
-#: install/install.php:28
+#: install/install.php:32
 msgid "Clean data from old installation of the plugin"
 msgstr ""
 
-#: install/install.php:30
+#: install/install.php:34
 msgid "Dropping corefactor and pvu columns"
 msgstr ""
 
-#: install/install.php:47
+#: install/install.php:51
 msgid "Creation tables in database"
 msgstr ""
 
-#: install/install.php:49
+#: install/install.php:53
 msgid "Creating glpi_plugin_sam_corefactors table"
 msgstr ""
 
-#: install/install.php:56
+#: install/install.php:60
 msgid "Creating glpi_plugin_sam_pvus table"
 msgstr ""
 
-#: install/install.php:64
+#: install/install.php:67
 msgid "Creating glpi_plugin_sam_metrics table"
 msgstr ""
 
-#: install/install.php:74
+#: install/install.php:79
+msgid "Populating tables"
+msgstr ""
+
+#: install/install.php:84
+msgid "Populating glpi_plugin_sam_corefactors table"
+msgstr ""
+
+#: install/install.php:102
 msgid "Modifying existing tables in database"
 msgstr ""
 
-#: install/install.php:76
+#: install/install.php:104
 msgid "Modifying glpi_deviceprocessors"
+msgstr ""
+
+#: install/install.php:111
+msgid "Modifying glpi_softwarelicenses"
 msgstr ""
 
 #: report/EntityVue.php:4 report/ProductVue.php:4
