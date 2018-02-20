@@ -7,28 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-20 14:17+0100\n"
-"PO-Revision-Date: 2018-02-20 15:20+0100\n"
+"POT-Creation-Date: 2018-02-20 15:31+0100\n"
+"PO-Revision-Date: 2018-02-20 15:32+0100\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 2.0.6\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: fr_FR\n"
-
-#: hook.php:8
-msgid "Setup"
-msgstr "Configuration"
-
-#: front/metric.form.php:4 front/metric.php:4
-msgid "Metric"
-msgstr "Métrique"
-
-#: front/metric.form.php:4
-msgid "metric"
-msgstr "métrique"
 
 #: inc/metric.class.php:4 inc/metric.class.php:16
 msgid "Metrics"
@@ -37,6 +25,14 @@ msgstr "Métriques"
 #: inc/metric.class.php:27
 msgid "ID"
 msgstr "ID"
+
+#: inc/devices/DeviceProcessor.class.php:9
+msgid "Core factor"
+msgstr "Coefficient par coeur (Oracle)"
+
+#: inc/devices/DeviceProcessor.class.php:14
+msgid "Processor Value Unit"
+msgstr "Valeur unitaire par coeur (IBM)"
 
 #: install/install.php:17
 msgid "Installation of plugin SAM"
@@ -63,7 +59,7 @@ msgid "Creating glpi_plugin_sam_corefactors table"
 msgstr "Création de la table glpi_plugin_sam_corefactors"
 
 #: install/install.php:56
-msgid "Creating glpi_plugin_sam_pvu table"
+msgid "Creating glpi_plugin_sam_pvus table"
 msgstr "Création de la table glpi_plugin_sam_pvu"
 
 #: install/install.php:64
@@ -74,10 +70,21 @@ msgstr "Création de la table glpi_plugin_sam_metrics_table"
 msgid "Modifying existing tables in database"
 msgstr "Modification de l’existence des tables dans la base de données"
 
-#: install/install.php:77
+#: install/install.php:76
 msgid "Modifying glpi_deviceprocessors"
 msgstr "Modification de la table glpi_deviceprocessors"
 
 #: report/EntityVue.php:4 report/ProductVue.php:4
 msgid "Software Asset Management"
 msgstr "Gestion du patrimoine des licenses"
+
+#: front/metric.php:4 front/metric.form.php:4
+msgid "Metric"
+msgstr "Métrique"
+
+#: front/metric.form.php:4
+msgid "metric"
+msgstr "métrique"
+
+#~ msgid "Setup"
+#~ msgstr "Configuration"
