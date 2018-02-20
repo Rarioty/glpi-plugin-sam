@@ -80,6 +80,22 @@
          $res = $DB->queryOrDie($query, $DB->error());
       }
 
+      /* Importing CSV files */
+      /* Importing corefactors */
+      $path="/../files/oracle_corefactors.csv";
+      echo $path;
+      $file=fopen(__DIR__ . $path, "r");
+     
+      while (!feof($file)){
+         $line=addslashes(fgets($file));
+         $tab=explode(';',$line);
+         $sql="INSERT INTO glpi_plugin_sam_corefactors VALUES('','".$tab[0]."', '".$tab[1]."')";
+         $res = $DB->queryOrDie($sql, $DB->error());
+      }
+
+      fclose($file);
+
+
       Plugin::registerClass('PluginSamCorefactor');
       Plugin::registerClass('PluginSamPvu');
       
