@@ -5,7 +5,7 @@
     * @return boolean
     */
    function plugin_sam_install() {
-      Html::header(__('Setup'), filter_input(INPUT_SERVER, "PHP_SELF"), "config", "plugins");
+      // Html::header(__('Setup'), filter_input(INPUT_SERVER, "PHP_SELF"), "config", "plugins");
       
       require_once (GLPI_ROOT . "/plugins/sam/install/install.php");
 
@@ -29,9 +29,14 @@
          $query = 'DROP TABLE glpi_plugin_sam_corefactors';
          $req = $DB->queryOrDie($query, $DB->error());
       }
-      
+
       if (TableExists('glpi_plugin_sam_pvus')){
          $query = 'DROP TABLE glpi_plugin_sam_pvus';
+         $req = $DB->queryOrDie($query, $DB->error());
+      }
+
+      if (TableExists('glpi_deviceprocessors')){
+         $query = 'ALTER TABLE glpi_deviceprocessors DROP plugin_sam_corefactors_id, DROP plugin_sam_pvus_id';
          $req = $DB->queryOrDie($query, $DB->error());
       }
       return true;

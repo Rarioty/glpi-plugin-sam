@@ -73,16 +73,15 @@
       /* Modifying tables */
       $migration->displayMessage(__("Modifying existing tables in database"));
 
-
       $migration->displayMessage(__("Modifying glpi_deviceprocessors"));
 
-      /*
-      if (TableExists('glpi_deviceprocessors')){
-         $query = 'ALTER TABLE glpi_deviceprocessors ADD (plugin_sam_pvu_id INT(11), plugin_sam_corefactors_id INT(11))';
+      if ($tableDeviceProcessorsExist){
+         $query= "ALTER TABLE glpi_deviceprocessors ADD plugin_sam_corefactors_id INT(11) NOT NULL, ADD plugin_sam_pvus_id INT(11) NOT NULL";
          $res = $DB->queryOrDie($query, $DB->error());
       }
-      */
-      //Plugin::registerClass('PluginSamCorefactor');
+
+      Plugin::registerClass('PluginSamCorefactor');
+      Plugin::registerClass('PluginSamPvu');
       
       return true;
    }
