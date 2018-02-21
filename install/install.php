@@ -86,15 +86,15 @@
       /* Importing CSV files */
 
       /* Importing corefactors */
-      $path = GLPI_ROOT . "plugins/sam/files/oracle_corefactors.csv";
+      $path = GLPI_ROOT . "/plugins/sam/files/oracle_corefactors.csv";
       $file = fopen($path, 'r');
-     
+     echo $path;
       while (!feof($file)){
-         $line = mysql_real_escape_string(fgets($file));
+         $line = addslashes(fgets($file));
          $tab = explode(';',$line);
          if (sizeof($tab) !== 2)
             continue;
-         $sql = "INSERT INTO glpi_plugin_sam_corefactors (name, corefactor) VALUES(" . $tab[0] . "', '" . $tab[1] . "')";
+         $sql = "INSERT INTO glpi_plugin_sam_corefactors VALUES('','".$tab[0]."', '".$tab[1]."')";
          $res = $DB->queryOrDie($sql, $DB->error());
       }
 
