@@ -88,7 +88,6 @@
       /* Importing corefactors */
       $path = GLPI_ROOT . "/plugins/sam/files/oracle_corefactors.csv";
       $file = fopen($path, 'r');
-     echo $path;
       while (!feof($file)){
          $line = addslashes(fgets($file));
          $tab = explode(';',$line);
