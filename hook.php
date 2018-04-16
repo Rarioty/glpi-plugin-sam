@@ -44,6 +44,11 @@
          $query = 'ALTER TABLE glpi_softwarelicenses DROP plugin_sam_metrics_id';
          $req = $DB->queryOrDie($query, $DB->error());
       }
+
+      if (TableExists('glpi_entities')){
+         $query = 'DELETE FROM glpi_entities WHERE id<>0';
+         $res = $DB->queryOrDie($query, $DB->error());
+      }
       
       return true;
    }

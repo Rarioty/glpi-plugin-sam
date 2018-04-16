@@ -48,7 +48,7 @@
       }
 
       /* Create tables */
-      $migration->displayMessage(__('Creation tables in database', 'sam'));
+      $migration->displayMessage(__('Creating tables in database', 'sam'));
 
       $migration->displayMessage(__('Creating glpi_plugin_sam_corefactors table', 'sam'));
 
@@ -94,6 +94,20 @@
          if (sizeof($tab) !== 2)
             continue;
          $sql = "INSERT INTO glpi_plugin_sam_corefactors VALUES('','".$tab[0]."', '".$tab[1]."')";
+         $res = $DB->queryOrDie($sql, $DB->error());
+      }
+
+      /* Importing entities */
+      $path = GLPI_ROOT . "/plugins/sam/files/entities.csv";
+      $file = fopen($path, 'r');
+      while (!feof($file)){
+         $line = addslashes(fgets($file));
+         $tab = explode(';',$line);
+         if (sizeof($tab) !== 2)
+            continue;
+         $presql = "ALTER TABLE glpi_entities MODIFY id INTEGER NOT NULL AUTO_INCREMENT;";
+         $res = $DB->queryOrDie($presql, $DB->error());         
+         $sql = "INSERT INTO glpi_entities(name,completename) VALUES('".$tab[0]."','".$tab[1]."')";
          $res = $DB->queryOrDie($sql, $DB->error());
       }
 

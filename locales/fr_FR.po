@@ -96,6 +96,30 @@ msgstr "Métrique"
 msgid "metric"
 msgstr "métrique"
 
+#: report/EntityVue.php:74
+msgid "Sofware"
+msgstr "Logiciel"
+
+#: front/EntityVue.php:75
+msgid "Editor"
+msgstr "Editeur"
+
+#: report/EntityVue.php:75
+msgid "License"
+msgstr "Licence"
+
+#: report/EntityVue.php:75
+msgid "Metric"
+msgstr "Métrique"
+
+#: report/EntityVue.php:75
+msgid "Licences requises"
+msgstr "Métrique"
+
+#: report/EntityVue.php:76
+msgid "Licences achetées"
+msgstr "métrique"
+
 #~ msgid "ID"
 #~ msgstr "ID"
 
