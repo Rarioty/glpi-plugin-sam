@@ -21,8 +21,8 @@
 
       public static function get_reports(){
          return array(
-            'report/EntityVue.php' => 'Entity vue',
-            'report/ProductVue.php' => 'Product vue',
+            'report/EntityView.php' => 'Entity view',
+            //'report/AllEntitiesView.php' => 'All entities view',
          );
       }
 

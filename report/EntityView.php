@@ -44,7 +44,6 @@
 				INNER JOIN glpi_plugin_sam_corefactors G ON F.plugin_sam_corefactors_id=G.id 
 				INNER JOIN glpi_manufacturers J ON A.manufacturers_id=J.id 
 				INNER JOIN glpi_plugin_sam_metrics K ON B.plugin_sam_metrics_id=K.id
-				#WHERE K.name='Oracle processor'
 				GROUP BY A.name,B.completename,K.name
 				ORDER BY delta";
 

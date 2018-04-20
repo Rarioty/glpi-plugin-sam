@@ -29,14 +29,14 @@
          $query = 'DROP TABLE glpi_plugin_sam_corefactors';
          $req = $DB->queryOrDie($query, $DB->error());
       }
-
+      /*  NOT YET IMPLEMENTED
       if (TableExists('glpi_plugin_sam_pvus')){
          $query = 'DROP TABLE glpi_plugin_sam_pvus';
          $req = $DB->queryOrDie($query, $DB->error());
       }
-
+      */
       if (TableExists('glpi_deviceprocessors')){
-         $query = 'ALTER TABLE glpi_deviceprocessors DROP plugin_sam_corefactors_id, DROP plugin_sam_pvus_id';
+         $query = 'ALTER TABLE glpi_deviceprocessors DROP plugin_sam_corefactors_id/*, DROP plugin_sam_pvus_id*/';
          $req = $DB->queryOrDie($query, $DB->error());
       }
 
@@ -46,7 +46,7 @@
       }
 
       if (TableExists('glpi_entities')){
-         $query = 'DELETE FROM glpi_entities WHERE id<>0';
+         $query = 'DELETE FROM glpi_entities /*WHERE id<>0*/';
          $res = $DB->queryOrDie($query, $DB->error());
       }
       
