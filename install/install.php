@@ -96,7 +96,7 @@
 
       $migration->displayMessage(__('Populating tables', 'sam'));
 
-      $query = "INSERT INTO glpi_plugin_sam_metrics(name, classname) VALUES('Oracle processor', 'PluginSamMetricOracleProcessor')";
+      $query = "INSERT INTO glpi_plugin_sam_metrics(name, classname) VALUES('Oracle processor', 'PluginSamMetricOracleProcessor'), ('Oracle nup', 'coucou')";
       $res = $DB->queryOrDie($query, $DB->error());
 
       $migration->displayMessage(__('Populating glpi_plugin_sam_corefactors table', 'sam'));

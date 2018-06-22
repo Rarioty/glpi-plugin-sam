@@ -46,7 +46,7 @@
       }
 
       if (TableExists('glpi_entities')){
-         $query = 'DELETE FROM glpi_entities /*WHERE id<>0*/';
+         $query = 'DELETE FROM glpi_entities WHERE id LIKE "100000%" ';
          $res = $DB->queryOrDie($query, $DB->error());
       }
       
