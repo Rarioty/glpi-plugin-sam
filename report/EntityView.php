@@ -45,7 +45,7 @@
 		    INNER JOIN glpi_manufacturers J ON A.manufacturers_id=J.id
 		    LEFT JOIN glpi_plugin_sam_metrics K ON X.plugin_sam_metrics_id=K.id
 		    INNER JOIN (
-		    # required licenses for eatch machine
+		    # required licenses for each machine
 		    	SELECT computers.id, computers.name, B.computers_id, SUM(processor.nbcores * G.corefactor) AS RequiredLicenses
 					FROM `glpi_computers` computers
 				    LEFT JOIN glpi_computervirtualmachines B ON computers.name=B.name
