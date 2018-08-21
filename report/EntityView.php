@@ -22,6 +22,7 @@
 				IF(Z.computers_id IS NULL, D.id, Z.computers_id) AS Computer_id,
 				J.name AS Editor,
                 K.name AS Metric,
+                Y.completename AS License,
                 X.number AS PurchasedLicenses,
 				SUM(E.RequiredLicenses) AS RequiredLicenses,
 				X.number - SUM(E.RequiredLicenses) AS Delta
